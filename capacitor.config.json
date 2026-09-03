@@ -1,6 +1,6 @@
 {
   "appId": "net.bh1jss.fmodashboard",
-  "appName": "FMO仪表盘",
+  "appName": "沉默的工作室FMO仪表盘",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {
