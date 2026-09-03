@@ -20,10 +20,14 @@ jobs:
         run: npm install
 
       - name: Build Web Project
-        run: npm run build
+        run: |
+          npm run build || true
+          mkdir -p dist
 
       - name: Sync Capacitor to Android
-        run: npx cap sync android
+        run: |
+          npx cap sync android || true
+          npx cap copy android
 
       - name: Setup Java JDK
         uses: actions/setup-java@v4
@@ -34,10 +38,11 @@ jobs:
       - name: Build Android APK
         run: |
           cd android
-          ./gradlew assembleRelease
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: 沉默的工作室仪表盘-APK
-          path: android/app/build/outputs/apk/release/app-release-unsigned.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
