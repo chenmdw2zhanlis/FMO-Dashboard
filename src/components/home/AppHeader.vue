@@ -3,11 +3,11 @@
     <button
       class="brand-home"
       type="button"
-      :title="t('header.backDashboard', '返回仪表盘')"
+      :title="t('header.backDashboard', '沉默的工作室仪表盘')"
       @click="router.push('/dashboard')"
     >
       <img src="/app-icon-384.png" alt="" class="header-logo" />
-      <span>{{ t('app.name', 'FMO 仪表盘') }}</span>
+      <span>{{ t('app.name', '沉默的工作室仪表盘') }}</span>
     </button>
 
     <div class="header-stats">
@@ -18,7 +18,7 @@
         <span class="stat-icon" aria-hidden="true">✨</span>
         {{ totalLogs }}<small>/{{ todayLogs }}</small>
       </span>
-      <span class="header-stat friend-stat" :title="t('header.friends', '好友数量')">
+      <span class="header-stat friend-stat" :title="t('header.friends', '坏朋友数量')">
         <span class="stat-icon" aria-hidden="true">👥</span>
         {{ uniqueCallsigns }}
       </span>
